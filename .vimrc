@@ -1,37 +1,3 @@
-""""""""""""""""""""""""""""""""""""""""""""""""
-"NeoBundle設定
-" 
-""""""""""""""""""""""""""""""""""""""""""""""""
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
-if &compatible
-    set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath^=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'itchyny/lightline.vim'
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
 """"""""""""""""""""""""""""""
@@ -47,6 +13,8 @@ set history=200
 set tags=~/.tags
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
 set noswapfile
+" バックアップファイルを作らない
+set nobackup
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
 " コマンドラインに使われる画面上の行数
@@ -63,8 +31,8 @@ set title
 set wildmenu
 " 入力中のコマンドを表示する
 set showcmd
-" バックアップディレクトリの指定(でもバックアップは使ってない)
-set backupdir=~/.vimbackup
+" 編集中のファイルが変更されたら自動で読み直す
+set autoread
 " バッファで開いているファイルのディレクトリでエクスクローラを開始する(でもエクスプローラって使ってない)
 set browsedir=buffer
 " 小文字のみで検索したときに大文字小文字を無視する
